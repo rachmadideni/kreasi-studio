@@ -36,6 +36,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Canonical apex: www.kreasi-studio.my.id -> kreasi-studio.my.id (301)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.kreasi-studio.my.id" }],
+        destination: "https://kreasi-studio.my.id/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
