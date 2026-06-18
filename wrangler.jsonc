@@ -8,6 +8,12 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  // Custom domain — auto-creates DNS record + SSL cert on deploy.
+  // Requires the zone "kreasi-studio.my.id" to be Active in this CF account first.
+  "routes": [
+    { "pattern": "kreasi-studio.my.id", "custom_domain": true },
+    { "pattern": "www.kreasi-studio.my.id", "custom_domain": true }
+  ],
   "observability": {
     "enabled": true
   }
