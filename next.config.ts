@@ -37,13 +37,21 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
+    const wwwHost = [{ type: "host" as const, value: "www.kreasi-studio.my.id" }];
+    // Canonical apex: www -> kreasi-studio.my.id (301).
+    // Root and sub-paths split out because "/:path*" leaves ":path*" literal on the empty (root) match.
     return [
-      // Canonical apex: www.kreasi-studio.my.id -> kreasi-studio.my.id (301)
       {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.kreasi-studio.my.id" }],
-        destination: "https://kreasi-studio.my.id/:path*",
-        permanent: true,
+        source: "/",
+        has: wwwHost,
+        destination: "https://kreasi-studio.my.id/",
+        statusCode: 301,
+      },
+      {
+        source: "/:path+",
+        has: wwwHost,
+        destination: "https://kreasi-studio.my.id/:path+",
+        statusCode: 301,
       },
     ];
   },
