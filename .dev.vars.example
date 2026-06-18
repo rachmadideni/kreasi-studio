@@ -1,0 +1,3 @@
+# Copy to .dev.vars (gitignored) for local `next dev` / `npm run preview`.
+# Production: set as a Worker secret -> `npx wrangler secret put RESEND_API_KEY`
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
