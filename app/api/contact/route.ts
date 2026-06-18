@@ -4,8 +4,8 @@ import { Resend } from "resend";
 
 // Email addresses (see memory: email-zero-cost-architecture)
 const NOTIFY_TO = "kreasi.studio.web@gmail.com";
-const FROM_NOTIFY = "Kreasi Studio Web <noreply@send.kreasi-studio.my.id>";
-const FROM_REPLY = "Kreasi Studio <hello@send.kreasi-studio.my.id>";
+const FROM_NOTIFY = "Kreasi Studio Web <noreply@kreasi-studio.my.id>";
+const FROM_REPLY = "Kreasi Studio <hello@kreasi-studio.my.id>";
 const REPLY_TO_HUMAN = "info@kreasi-studio.my.id";
 
 type ContactPayload = {
